@@ -1,0 +1,27 @@
+!!!!   21    2    1 1287902043   0000                                         
+
+
+diode "cr12", 1.15, 200m, nr
+diode "cr13", 1.15, 200m, nr
+diode "cr23", 1.15, 200m, nr
+
+external pins 1
+
+   device "cr12 pins "C"
+
+   device "cr13 pins "C"
+
+
+external pins 2
+
+   device "cr12 pins "A"
+
+   device "cr23 pins "C"
+
+
+external pins 3
+
+   device "cr13 pins "A"
+
+   device "cr23 pins "A"
+

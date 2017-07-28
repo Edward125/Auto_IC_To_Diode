@@ -1,0 +1,10 @@
+connect s to "#%RTC_AUX_S5"
+connect i to "#%3D3V_AUX_S5"
+diode 823m, 213m, idc5.0m, co3.0, ar823m
+! "d2501%cr1" test.
+! DUT: nominal 500m, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 800m, low 200m
+! TEST: high limit 823.184m, low limit 213.355m
+! Tolerance Multiplier 3.00
+! Remote Sensing is Allowed
+! Bias Current is 5m

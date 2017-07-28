@@ -1,0 +1,4 @@
+  PQ4402
+    1.H_PROCHOT#,NC
+    2.PWR_CHG_CMPOUT_R
+    3.GND;
