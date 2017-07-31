@@ -1,0 +1,167 @@
+!!!!   21    2    1 1287902043   0000                                         
+
+
+diode "cr12", 1.15, 200m, nr
+diode "cr13", 1.15, 200m, nr
+diode "cr14", 1.15, 200m, nr
+diode "cr15", 1.15, 200m, nr
+diode "cr16", 1.15, 200m, nr
+diode "cr17", 1.15, 200m, nr
+diode "cr18", 1.15, 200m, nr
+diode "cr23", 1.15, 200m, nr
+diode "cr24", 1.15, 200m, nr
+diode "cr25", 1.15, 200m, nr
+diode "cr26", 1.15, 200m, nr
+diode "cr27", 1.15, 200m, nr
+diode "cr28", 1.15, 200m, nr
+diode "cr34", 1.15, 200m, nr
+diode "cr35", 1.15, 200m, nr
+diode "cr36", 1.15, 200m, nr
+diode "cr37", 1.15, 200m, nr
+diode "cr38", 1.15, 200m, nr
+diode "cr45", 1.15, 200m, nr
+diode "cr46", 1.15, 200m, nr
+diode "cr47", 1.15, 200m, nr
+diode "cr48", 1.15, 200m, nr
+diode "cr56", 1.15, 200m, nr
+diode "cr57", 1.15, 200m, nr
+diode "cr58", 1.15, 200m, nr
+diode "cr67", 1.15, 200m, nr
+diode "cr68", 1.15, 200m, nr
+diode "cr78", 1.15, 200m, nr
+
+external pins 1
+
+   device "cr12 pins "C"
+
+   device "cr13 pins "C"
+
+   device "cr14 pins "C"
+
+   device "cr15 pins "C"
+
+   device "cr16 pins "C"
+
+   device "cr17 pins "C"
+
+   device "cr18 pins "C"
+
+
+external pins 2
+
+   device "cr12 pins "A"
+
+   device "cr23 pins "C"
+
+   device "cr24 pins "C"
+
+   device "cr25 pins "C"
+
+   device "cr26 pins "C"
+
+   device "cr27 pins "C"
+
+   device "cr28 pins "C"
+
+
+external pins 3
+
+   device "cr13 pins "A"
+
+   device "cr23 pins "A"
+
+   device "cr34 pins "C"
+
+   device "cr35 pins "C"
+
+   device "cr36 pins "C"
+
+   device "cr37 pins "C"
+
+   device "cr38 pins "C"
+
+
+external pins 4
+
+   device "cr14 pins "A"
+
+   device "cr24 pins "A"
+
+   device "cr34 pins "A"
+
+   device "cr45 pins "C"
+
+   device "cr46 pins "C"
+
+   device "cr47 pins "C"
+
+   device "cr48 pins "C"
+
+
+external pins 5
+
+   device "cr15 pins "A"
+
+   device "cr25 pins "A"
+
+   device "cr35 pins "A"
+
+   device "cr45 pins "A"
+
+   device "cr56 pins "C"
+
+   device "cr57 pins "C"
+
+   device "cr58 pins "C"
+
+
+external pins 6
+
+   device "cr16 pins "A"
+
+   device "cr26 pins "A"
+
+   device "cr36 pins "A"
+
+   device "cr46 pins "A"
+
+   device "cr56 pins "A"
+
+   device "cr67 pins "C"
+
+   device "cr68 pins "C"
+
+
+external pins 7
+
+   device "cr17 pins "A"
+
+   device "cr27 pins "A"
+
+   device "cr37 pins "A"
+
+   device "cr47 pins "A"
+
+   device "cr57 pins "A"
+
+   device "cr67 pins "A"
+
+   device "cr78 pins "C"
+
+
+external pins 8
+
+   device "cr18 pins "A"
+
+   device "cr28 pins "A"
+
+   device "cr38 pins "A"
+
+   device "cr48 pins "A"
+
+   device "cr58 pins "A"
+
+   device "cr68 pins "A"
+
+   device "cr78 pins "A"
+

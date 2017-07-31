@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using Edward;
 
 namespace Auto_IC_To_Diode
 {
@@ -14,8 +15,9 @@ namespace Auto_IC_To_Diode
         public Form1()
         {
             InitializeComponent();
-            //txtICFile.SetWatermark("双击此处，选择IC文档");
-            txtICFile.Text ="双击此处，选择IC文档";
+            txtICFile.SetWatermark("双击此处，选择IC文档");
+            txtInFront.SetWatermark("输入零件前缀,1%,2%或者为空");
+             //txtICFile.Text ="双击此处，选择IC文档";
         }
 
         #region 参数定义
@@ -76,7 +78,8 @@ namespace Auto_IC_To_Diode
                 {
                     if (IC_Pin.Count != 0 && IC_Name  != string.Empty)
                     {
-                        ReWriteDiode(IC_Name, IC_Pin);
+                        //ReWriteDiode(IC_Name, IC_Pin);
+                        ReWriteDiode(IC_Name, txtInFront.Text.Trim(), IC_Pin);
                         ReWriteDiodeLib(IC_Pin);
                         IC_Pin.Clear();
                     }
@@ -97,17 +100,18 @@ namespace Auto_IC_To_Diode
             }
             sr.Close();
             //
-            ReWriteDiode(IC_Name, IC_Pin);
+           // ReWriteDiode(IC_Name, IC_Pin);
+            ReWriteDiode(IC_Name, txtInFront.Text.Trim(), IC_Pin);
+
             ReWriteDiodeLib(IC_Pin);
             MessageBox.Show ("Auto create diode complete,these files save in " + currentFolder  );
             IC_Name = string.Empty;
             IC_Pin.Clear();
-
             //delete file 
             File.Delete(Application.StartupPath + @"\diode");
             File.Delete(Application.StartupPath + @"\Compile");
             File.Delete(Application.StartupPath + @"\lib");
-
+            OpenFolderAndSelectFile(currentComplileFile);
         }
 
 
@@ -253,6 +257,63 @@ namespace Auto_IC_To_Diode
                             // MessageBox.Show(it);
                             StreamWriter swCompile = new StreamWriter(currentComplileFile, true);
                             swCompile.WriteLine("compile " + @""""  + @"analog/" + @"1%" + icname + "%cr" + i.ToString() + "-" + j.ToString() + @"""");
+                            swCompile.Close();
+                        }
+                    }
+                }
+                j = 0;
+            }
+            i = 0;
+            //sw.Close();
+            //===============
+        }
+
+        private void ReWriteDiode(string icname,string infornt, List<string> list)
+        {
+            //===============
+            int i = 0;
+            int j = 0;
+            // foreach (string st in IC_Pin)
+            foreach (string sbus in list)
+            {
+                i++;
+                // foreach (string stt in IC_Pin)
+                foreach (string ibus in list)
+                {
+                    j++;
+                    if (i != j && i < j)
+                    {
+                        if (sbus != ibus && !sbus.EndsWith("NC") && !ibus.EndsWith("NC"))
+                        {
+                            string file = Application.StartupPath + @"\diode";
+                            //string destfile = currentFolder + @"\1%" + icname + "%cr" + i.ToString() + "-" + j.ToString();
+                            string destfile = currentFolder + @"\"+@infornt + icname + "%cr" + i.ToString() + "-" + j.ToString();
+                            //File.Copy(file, Application.StartupPath + @"\1%" + icname + "%cr" + i.ToString() + "-" + j.ToString());
+                            File.Copy(file, destfile);
+                            if (!string.IsNullOrEmpty(infornt))
+                            {
+                                _d_S_bus = @"connect s to " + @"""" + @"#%" + sbus + @"""";
+                                _d_I_bus = @"connect i to " + @"""" + @"#%" + ibus + @"""";
+                            }
+                            else
+                            {
+                                _d_S_bus = @"connect s to " + @""""  + sbus + @"""";
+                                _d_I_bus = @"connect i to " + @""""  + ibus + @"""";
+                            }
+                           
+                            _d_Comment_1 = @"! " + @"""" + @infornt + icname + "%cr" + i.ToString() + "-" + j.ToString() + @"""" + @"test.";
+                            StreamWriter sw = new StreamWriter(destfile, true);
+                            // string it = i.ToString() + ":" + j.ToString() + "->" + ibus + ":" + ibus;
+                            sw.WriteLine(_d_S_bus);
+                            sw.WriteLine(_d_I_bus);
+                            sw.WriteLine(_d_Test);
+                            sw.WriteLine(_d_Comment_1);
+                            sw.WriteLine(_d_Comment_2);
+                            sw.WriteLine(_d_Comment_3);
+                            sw.Close();
+                            // MessageBox.Show(it);
+                            StreamWriter swCompile = new StreamWriter(currentComplileFile, true);
+                            swCompile.WriteLine("compile " + @"""" + @"analog/" + @infornt+ icname + "%cr" + i.ToString() + "-" + j.ToString() + @"""");
                             swCompile.Close();
                         }
                     }
@@ -426,5 +487,12 @@ namespace Auto_IC_To_Diode
         }
 
         #endregion
+
+        private void OpenFolderAndSelectFile(String fileFullName)
+        {
+            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("Explorer.exe");
+            psi.Arguments = "/e,/select," + fileFullName;
+            System.Diagnostics.Process.Start(psi);
+        }
     }
 }

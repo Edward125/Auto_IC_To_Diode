@@ -28,3 +28,10 @@ E:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\bin\Debug\Auto_IC_To_Diode.p
 E:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\obj\Debug\Auto_IC_To_Diode.Form1.resources
 E:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\obj\Debug\Auto_IC_To_Diode.Properties.Resources.resources
 E:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\obj\Debug\Auto_IC_To_Diode.csproj.GenerateResource.Cache
+D:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\obj\Debug\Auto_IC_To_Diode.exe
+D:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\obj\Debug\Auto_IC_To_Diode.pdb
+D:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\bin\Debug\Auto_IC_To_Diode.exe
+D:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\bin\Debug\Auto_IC_To_Diode.pdb
+D:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\obj\Debug\Auto_IC_To_Diode.Form1.resources
+D:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\obj\Debug\Auto_IC_To_Diode.Properties.Resources.resources
+D:\Edward\Auto_IC_To_Diode_1.0.3.0\Auto_IC_To_Diode\obj\Debug\Auto_IC_To_Diode.csproj.GenerateResource.Cache

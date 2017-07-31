@@ -1,0 +1,16 @@
+!!!!    2    0    1 1438135781   0000                                         
+! IPG: rev 07.20p  Wed Jul 29 10:09:42 2015
+! Common Lead Resistance 100m, Common Lead Inductance 1.00u
+! Fixture: EXPRESS
+disconnect all
+connect s to "#%PWR_CHG_ACOK"
+connect i to "#%AC_IN#"
+diode 1.15, 213m, idc5.0m, co3.0, ar823m
+! "1%PQ4406%cr1-2"test.
+! DUT: nominal 500m, plus tol 60.0 %, minus tol 60.0 %
+! DUT: high 1.15, low 200m
+! TEST: high limit 1.15, low limit 213.355m
+! Tolerance Multiplier 3.00
+! Remote Sensing is Allowed
+! Bias Current is 5
+! This test file is auto created by Auto_IC_To_Diode.exe,Author:edward_song@yeah.net
